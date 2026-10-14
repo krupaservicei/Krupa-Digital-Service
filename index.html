@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b72">
+  <title>Krupa Digital Service | କୃପା ଡିଜିଟାଲ୍ ସର୍ଭିସ୍</title>
+  <meta name="description" content="Krupa Digital Service — online form filling, printing, photocopy, passport-size photos, bill payment assistance and more.">
+  <style>
+    :root{--navy:#123b72;--blue:#1f65b5;--sky:#eaf4ff;--gold:#ffbf47;--ink:#182334;--muted:#5b6879;--white:#fff;--line:#dce6f1;--green:#138a58}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Oriya","Noto Sans",Arial,sans-serif;color:var(--ink);background:#f7faff;line-height:1.6}
+    a{color:inherit}
+    .topbar{background:#0b2850;color:#fff;font-size:.9rem;padding:7px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{background:#fff;position:sticky;top:0;z-index:5;box-shadow:0 3px 16px #123b7210}
+    .nav{max-width:1120px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;color:var(--navy);font-size:1.08rem}
+    .logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;color:white;font-weight:900;font-size:1.2rem;box-shadow:0 5px 14px #123b7230}
+    .navlinks{display:flex;gap:20px;align-items:center}
+    .navlinks a{text-decoration:none;font-weight:650;font-size:.94rem}
+    .navlinks a:hover{color:var(--blue)}
+    .lang{border:1px solid var(--line);border-radius:999px;padding:8px 13px;background:#fff;font-weight:750;cursor:pointer;color:var(--navy)}
+    .hero{background:radial-gradient(circle at 85% 20%,#3b83d6 0,transparent 29%),linear-gradient(125deg,#0b2850,#1756a0);color:#fff;overflow:hidden}
+    .hero-inner{max-width:1120px;margin:auto;padding:76px 22px 72px;display:grid;grid-template-columns:1.3fr .7fr;gap:45px;align-items:center}
+    .eyebrow{display:inline-block;background:#ffffff1c;border:1px solid #ffffff40;border-radius:999px;padding:6px 13px;font-size:.88rem;margin-bottom:17px}
+    h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12;letter-spacing:-.04em;margin:0 0 17px}
+    .hero p{color:#e4efff;font-size:1.08rem;max-width:620px;margin:0 0 25px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:12px 18px;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+    .btn-gold{background:var(--gold);color:#2b2b2b}
+    .btn-light{background:#fff;color:var(--navy)}
+    .hero-card{background:#ffffff14;border:1px solid #ffffff35;border-radius:24px;padding:25px;backdrop-filter:blur(6px)}
+    .hero-card .bigicon{font-size:3.5rem}
+    .hero-card h2{margin:7px 0 4px;font-size:1.4rem}
+    .hero-card p{font-size:.96rem;margin:0;color:#e4efff}
+    .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+    .quick{background:#ffffff14;border-radius:12px;padding:12px;font-weight:700;font-size:.9rem}
+    section{padding:66px 22px}
+    .container{max-width:1120px;margin:auto}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 34px}
+    .section-head .tag{color:var(--blue);font-weight:800;text-transform:uppercase;font-size:.8rem;letter-spacing:.12em}
+    h2{line-height:1.2}
+    .section-head h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:9px 0 12px;color:var(--navy)}
+    .section-head p{color:var(--muted);margin:0}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:#fff;border:1px solid var(--line);border-radius:18px;padding:23px;box-shadow:0 8px 25px #173d6810;transition:transform .2s,box-shadow .2s}
+    .service:hover{transform:translateY(-4px);box-shadow:0 14px 30px #173d6818}
+    .icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:var(--sky);font-size:1.7rem;margin-bottom:15px}
+    .service h3{margin:0 0 7px;color:var(--navy);font-size:1.15rem}
+    .service p{margin:0;color:var(--muted);font-size:.96rem}
+    .notice{margin-top:22px;padding:15px 18px;background:#fff8e8;border:1px solid #ffe0a1;border-radius:12px;color:#684d12;font-size:.92rem}
+    .how{background:var(--sky)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .step{background:#fff;padding:22px;border-radius:16px;border:1px solid #d9e9fb}
+    .num{width:35px;height:35px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:12px}
+    .step h3{margin:0 0 7px;color:var(--navy)}
+    .step p{margin:0;color:var(--muted)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+    .contact-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:27px}
+    .contact-box h3{margin:0 0 10px;color:var(--navy)}
+    .contact-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+    .contact-item:last-child{border-bottom:0}
+    .contact-item .ci{font-size:1.35rem}
+    .contact-item strong{display:block}
+    .contact-item span{color:var(--muted);font-size:.94rem}
+    .placeholder{color:#a14e00;font-weight:750}
+    .form-note{color:var(--muted);font-size:.94rem}
+    footer{background:#0b2850;color:#dbe8fa;padding:28px 22px}
+    .footer-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .footer-inner p{margin:0;font-size:.9rem}
+    .smallprint{font-size:.82rem;color:#c5d5ea;margin-top:14px}
+    [data-lang="or"]{display:none}
+    body.odia [data-lang="en"]{display:none}
+    body.odia [data-lang="or"]{display:initial}
+    body.odia div[data-lang="or"],body.odia p[data-lang="or"],body.odia h1[data-lang="or"],body.odia h2[data-lang="or"],body.odia h3[data-lang="or"],body.odia span[data-lang="or"],body.odia a[data-lang="or"]{display:block}
+    body.odia .brand [data-lang="or"]{display:inline}
+    @media(max-width:800px){
+      .hero-inner{grid-template-columns:1fr;padding-top:54px}
+      .hero-card{max-width:520px}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .navlinks{display:none}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .services,.steps{grid-template-columns:1fr}
+      section{padding:48px 17px}
+      .nav{padding:11px 16px}
+      .hero-inner{padding:48px 17px}
+      .topbar{padding-left:17px;padding-right:17px;font-size:.8rem}
+      .brand{font-size:.94rem}
+      .logo{width:40px;height:40px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span data-lang="en">Your local digital service partner</span><span data-lang="or">ଆପଣଙ୍କର ନିଜସ୍ୱ ଡିଜିଟାଲ୍ ସେବା ସାଥୀ</span>
+    <span data-lang="en">English | ଓଡ଼ିଆ</span><span data-lang="or">ଓଡ଼ିଆ | English</span>
+  </div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home"><span class="logo">KD</span><span>Krupa Digital<br><small>Service</small></span></a>
+      <div class="navlinks">
+        <a href="#home" data-lang="en">Home</a><a href="#home" data-lang="or">ମୁଖ୍ୟ ପୃଷ୍ଠା</a>
+        <a href="#services" data-lang="en">Services</a><a href="#services" data-lang="or">ସେବା</a>
+        <a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="or">ଯୋଗାଯୋଗ</a>
+      </div>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">ଓଡ଼ିଆ</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow" data-lang="en">Friendly • Reliable • Convenient</span>
+          <span class="eyebrow" data-lang="or">ସହଜ • ଭରସାଯୋଗ୍ୟ • ସୁବିଧାଜନକ</span>
+          <h1 data-lang="en">Your Everyday Digital Services, Made Easier.</h1>
+          <h1 data-lang="or">ଆପଣଙ୍କ ଦୈନନ୍ଦିନ ଡିଜିଟାଲ୍ ସେବା, ଏବେ ଆହୁରି ସହଜ।</h1>
+          <p data-lang="en">Welcome to Krupa Digital Service. Get help with online form filling, printing, photocopying, passport-size photos, bill payment assistance and more.</p>
+          <p data-lang="or">କୃପା ଡିଜିଟାଲ୍ ସର୍ଭିସ୍‌କୁ ସ୍ୱାଗତ। ଅନଲାଇନ୍ ଫର୍ମ ପୂରଣ, ପ୍ରିଣ୍ଟିଂ, ଫଟୋକପି, ପାସପୋର୍ଟ ସାଇଜ୍ ଫଟୋ, ବିଲ୍ ପେମେଣ୍ଟ ସହାୟତା ଏବଂ ଅନ୍ୟାନ୍ୟ ସେବା ପାଆନ୍ତୁ।</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="#services"><span data-lang="en">Explore Services →</span><span data-lang="or">ସେବା ଦେଖନ୍ତୁ →</span></a>
+            <a class="btn btn-light" href="#contact"><span data-lang="en">Contact the Shop</span><span data-lang="or">ଦୋକାନ ସହ ଯୋଗାଯୋଗ</span></a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="bigicon">🖨️ 📄 📸</div>
+          <h2 data-lang="en">Krupa Digital Service</h2><h2 data-lang="or">କୃପା ଡିଜିଟାଲ୍ ସର୍ଭିସ୍</h2>
+          <p data-lang="en">Digital help for your everyday needs.</p><p data-lang="or">ଆପଣଙ୍କ ଦୈନନ୍ଦିନ ଆବଶ୍ୟକତା ପାଇଁ ଡିଜିଟାଲ୍ ସହାୟତା।</p>
+          <div class="quick-grid">
+            <div class="quick">📝 <span data-lang="en">Online Forms</span><span data-lang="or">ଅନଲାଇନ୍ ଫର୍ମ</span></div>
+            <div class="quick">🖨️ <span data-lang="en">Print & Copy</span><span data-lang="or">ପ୍ରିଣ୍ଟ ଓ କପି</span></div>
+            <div class="quick">📸 <span data-lang="en">Photo Service</span><span data-lang="or">ଫଟୋ ସେବା</span></div>
+            <div class="quick">💡 <span data-lang="en">Bill Assistance</span><span data-lang="or">ବିଲ୍ ସହାୟତା</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="tag" data-lang="en">What we do</span><span class="tag" data-lang="or">ଆମ ସେବା</span>
+          <h2 data-lang="en">Services for You</h2><h2 data-lang="or">ଆପଣଙ୍କ ପାଇଁ ସେବା</h2>
+          <p data-lang="en">Choose a service and contact us to confirm availability, required documents and charges.</p>
+          <p data-lang="or">ଆପଣଙ୍କୁ ଆବଶ୍ୟକ ସେବା ବାଛନ୍ତୁ ଏବଂ ଉପଲବ୍ଧତା, ଆବଶ୍ୟକ କାଗଜପତ୍ର ଓ ଶୁଳ୍କ ଜାଣିବା ପାଇଁ ଯୋଗାଯୋଗ କରନ୍ତୁ।</p>
+        </div>
+        <div class="services">
+          <article class="service"><div class="icon">📝</div><h3 data-lang="en">Online Form Filling</h3><h3 data-lang="or">ଅନଲାଇନ୍ ଫର୍ମ ପୂରଣ</h3><p data-lang="en">Assistance with online applications and form submission where available.</p><p data-lang="or">ଉପଲବ୍ଧ ଅନଲାଇନ୍ ଆବେଦନ ଓ ଫର୍ମ ଦାଖଲରେ ସହାୟତା।</p></article>
+          <article class="service"><div class="icon">🖨️</div><h3 data-lang="en">Printing & Photocopy</h3><h3 data-lang="or">ପ୍ରିଣ୍ଟିଂ ଓ ଫଟୋକପି</h3><p data-lang="en">Printing on different paper types and photocopy services.</p><p data-lang="or">ବିଭିନ୍ନ ପ୍ରକାର କାଗଜରେ ପ୍ରିଣ୍ଟିଂ ଓ ଫଟୋକପି ସେବା।</p></article>
+          <article class="service"><div class="icon">📸</div><h3 data-lang="en">Passport-size Photos</h3><h3 data-lang="or">ପାସପୋର୍ଟ ସାଇଜ୍ ଫଟୋ</h3><p data-lang="en">Passport-size photo preparation and printing.</p><p data-lang="or">ପାସପୋର୍ଟ ସାଇଜ୍ ଫଟୋ ପ୍ରସ୍ତୁତି ଓ ପ୍ରିଣ୍ଟିଂ।</p></article>
+          <article class="service"><div class="icon">💡</div><h3 data-lang="en">Bill Payment Assistance</h3><h3 data-lang="or">ବିଲ୍ ପେମେଣ୍ଟ ସହାୟତା</h3><p data-lang="en">Assistance with supported bill-payment services. Always check the amount and receipt.</p><p data-lang="or">ସମର୍ଥିତ ବିଲ୍ ପେମେଣ୍ଟ ସେବାରେ ସହାୟତା। ଟଙ୍କା ଓ ରସିଦ୍ ନିଶ୍ଚିତ କରନ୍ତୁ।</p></article>
+          <article class="service"><div class="icon">📄</div><h3 data-lang="en">Document Services</h3><h3 data-lang="or">ଡକ୍ୟୁମେଣ୍ଟ ସେବା</h3><p data-lang="en">Document scanning, file preparation and other available office services.</p><p data-lang="or">ଡକ୍ୟୁମେଣ୍ଟ ସ୍କାନ୍, ଫାଇଲ୍ ପ୍ରସ୍ତୁତି ଓ ଉପଲବ୍ଧ ଅଫିସ୍ ସେବା।</p></article>
+          <article class="service"><div class="icon">✨</div><h3 data-lang="en">Other Services</h3><h3 data-lang="or">ଅନ୍ୟାନ୍ୟ ସେବା</h3><p data-lang="en">Need something else? Contact us to ask whether we can help.</p><p data-lang="or">ଅନ୍ୟ କୌଣସି ସେବା ଆବଶ୍ୟକ କି? ଆମେ ସହାୟତା କରିପାରିବୁ କି ନାହିଁ ପଚାରନ୍ତୁ।</p></article>
+        </div>
+        <div class="notice">
+          <strong data-lang="en">Please note:</strong><strong data-lang="or">ଦୟାକରି ଧ୍ୟାନ ଦିଅନ୍ତୁ:</strong>
+          <span data-lang="en">Service availability and charges may vary. Government or financial services are provided only where authorized. Never share OTPs, PINs or passwords.</span>
+          <span data-lang="or">ସେବା ଉପଲବ୍ଧତା ଓ ଶୁଳ୍କ ବଦଳିପାରେ। ସରକାରୀ କିମ୍ବା ଆର୍ଥିକ ସେବା କେବଳ ଅନୁମତି ଥିଲେ ଦିଆଯାଏ। OTP, PIN କିମ୍ବା ପାସୱାର୍ଡ କାହାକୁ ଦିଅନ୍ତୁ ନାହିଁ।</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="how">
+      <div class="container">
+        <div class="section-head">
+          <span class="tag" data-lang="en">Simple process</span><span class="tag" data-lang="or">ସହଜ ପ୍ରକ୍ରିୟା</span>
+          <h2 data-lang="en">How to Get Started</h2><h2 data-lang="or">କିପରି ଆରମ୍ଭ କରିବେ</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><h3 data-lang="en">Choose a Service</h3><h3 data-lang="or">ସେବା ବାଛନ୍ତୁ</h3><p data-lang="en">Check the service list and decide what you need.</p><p data-lang="or">ସେବା ତାଲିକା ଦେଖି ଆପଣଙ୍କ ଆବଶ୍ୟକତା ବାଛନ୍ତୁ।</p></div>
+          <div class="step"><div class="num">2</div><h3 data-lang="en">Contact Us</h3><h3 data-lang="or">ଯୋଗାଯୋଗ କରନ୍ତୁ</h3><p data-lang="en">Call or message the shop to check details and charges.</p><p data-lang="or">ବିବରଣୀ ଓ ଶୁଳ୍କ ଜାଣିବା ପାଇଁ ଫୋନ୍ କିମ୍ବା ମେସେଜ୍ କରନ୍ତୁ।</p></div>
+          <div class="step"><div class="num">3</div><h3 data-lang="en">Visit or Follow Instructions</h3><h3 data-lang="or">ଦୋକାନକୁ ଆସନ୍ତୁ କିମ୍ବା ନିର୍ଦ୍ଦେଶ ମାନନ୍ତୁ</h3><p data-lang="en">Bring only the documents needed for your chosen service.</p><p data-lang="or">ବାଛିଥିବା ସେବା ପାଇଁ ଆବଶ୍ୟକ କାଗଜପତ୍ର ମାତ୍ର ଆଣନ୍ତୁ।</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="tag" data-lang="en">Get in touch</span><span class="tag" data-lang="or">ଯୋଗାଯୋଗ କରନ୍ତୁ</span>
+          <h2 data-lang="en">Contact Krupa Digital Service</h2><h2 data-lang="or">କୃପା ଡିଜିଟାଲ୍ ସର୍ଭିସ୍ ସହ ଯୋଗାଯୋଗ</h2>
+          <p data-lang="en">Add your real phone number and shop address before publishing this website.</p>
+          <p data-lang="or">ୱେବସାଇଟ୍ ପ୍ରକାଶ କରିବା ପୂର୍ବରୁ ଆପଣଙ୍କ ପ୍ରକୃତ ଫୋନ୍ ନମ୍ବର ଓ ଦୋକାନ ଠିକଣା ଯୋଡ଼ନ୍ତୁ।</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h3 data-lang="en">Shop Information</h3><h3 data-lang="or">ଦୋକାନ ସୂଚନା</h3>
+            <div class="contact-item"><div class="ci">📞</div><div><strong data-lang="en">Phone / WhatsApp</strong><strong data-lang="or">ଫୋନ୍ / ହ୍ୱାଟ୍ସଆପ୍</strong><span class="placeholder">Add your phone number</span></div></div>
+            <div class="contact-item"><div class="ci">📍</div><div><strong data-lang="en">Shop Address</strong><strong data-lang="or">ଦୋକାନ ଠିକଣା</strong><span class="placeholder">Add village / town, district, Odisha</span></div></div>
+            <div class="contact-item"><div class="ci">🕒</div><div><strong data-lang="en">Opening Hours</strong><strong data-lang="or">ଖୋଲିବା ସମୟ</strong><span class="placeholder">Add your working days and hours</span></div></div>
+          </div>
+          <div class="contact-box">
+            <h3 data-lang="en">Customer Enquiry</h3><h3 data-lang="or">ଗ୍ରାହକଙ୍କ ପ୍ରଶ୍ନ</h3>
+            <p data-lang="en">For now, contact the shop directly. You can connect a Google Form here later for customer enquiries. Avoid asking customers to upload sensitive identity or banking documents through a public form.</p>
+            <p data-lang="or">ବର୍ତ୍ତମାନ ପାଇଁ ସିଧାସଳଖ ଦୋକାନ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ। ପରେ ଗ୍ରାହକଙ୍କ ପ୍ରଶ୍ନ ପାଇଁ Google Form ଯୋଡ଼ିପାରିବେ। ସାଧାରଣ ଫର୍ମରେ ସମ୍ବେଦନଶୀଳ ପରିଚୟ କିମ୍ବା ବ୍ୟାଙ୍କିଂ ଡକ୍ୟୁମେଣ୍ଟ ଅପଲୋଡ୍ କରିବାକୁ କହନ୍ତୁ ନାହିଁ।</p>
+            <a class="btn btn-gold" href="mailto:hello@example.com"><span data-lang="en">Email (replace this address)</span><span data-lang="or">ଇମେଲ୍ (ଏହି ଠିକଣା ବଦଳାନ୍ତୁ)</span></a>
+            <p class="form-note" data-lang="en">The email button is a placeholder. Replace it with your business email or remove it before publishing.</p>
+            <p class="form-note" data-lang="or">ଇମେଲ୍ ବଟନ୍ ଏକ ଉଦାହରଣ ମାତ୍ର। ପ୍ରକାଶ ପୂର୍ବରୁ ନିଜ ବ୍ୟବସାୟିକ ଇମେଲ୍ ଦିଅନ୍ତୁ କିମ୍ବା ଏହାକୁ ହଟାନ୍ତୁ।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p><strong>Krupa Digital Service</strong><br><span data-lang="en">Your digital service partner.</span><span data-lang="or">ଆପଣଙ୍କ ଡିଜିଟାଲ୍ ସେବା ସାଥୀ।</span></p>
+      <p>© <span id="year"></span> Krupa Digital Service</p>
+    </div>
+    <div class="footer-inner smallprint">
+      <p data-lang="en">This website provides general service information. It is not an official government website.</p>
+      <p data-lang="or">ଏହି ୱେବସାଇଟ୍ ସାଧାରଣ ସେବା ସୂଚନା ପ୍ରଦାନ କରେ। ଏହା ସରକାରୀ ଅଫିସିଆଲ୍ ୱେବସାଇଟ୍ ନୁହେଁ।</p>
+    </div>
+  </footer>
+  <script>
+    const btn = document.getElementById('langBtn');
+    btn.addEventListener('click', () => {
+      const odia = document.body.classList.toggle('odia');
+      document.documentElement.lang = odia ? 'or' : 'en';
+      btn.textContent = odia ? 'English' : 'ଓଡ଼ିଆ';
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
