@@ -155,18 +155,230 @@
           <article class="service"><div class="icon">📄</div><h3 data-lang="en">Document Services</h3><h3 data-lang="or">ଡକ୍ୟୁମେଣ୍ଟ ସେବା</h3><p data-lang="en">Document scanning, file preparation and other available office services.</p><p data-lang="or">ଡକ୍ୟୁମେଣ୍ଟ ସ୍କାନ୍, ଫାଇଲ୍ ପ୍ରସ୍ତୁତି ଓ ଉପଲବ୍ଧ ଅଫିସ୍ ସେବା।</p></article>
           <article class="service"><div class="icon">✨</div><h3 data-lang="en">Other Services</h3><h3 data-lang="or">ଅନ୍ୟାନ୍ୟ ସେବା</h3><p data-lang="en">Need something else? Contact us to ask whether we can help.</p><p data-lang="or">ଅନ୍ୟ କୌଣସି ସେବା ଆବଶ୍ୟକ କି? ଆମେ ସହାୟତା କରିପାରିବୁ କି ନାହିଁ ପଚାରନ୍ତୁ।</p></article>
         </div>
-        <div class="notice">
-  <h3>Service Price List | ସେବା ମୂଲ୍ୟ ତାଲିକା</h3>
-  <p>Online Form Filling: ₹50 onwards</p>
-  <p>Black &amp; White Printing: ₹3 per page</p>
-  <p>Colour Printing: ₹10 per page</p>
-  <p>Photocopy: ₹2 per page</p>
-  <p>Passport-size Photos: ₹50 per set</p>
-  <p>Resume Creation: ₹100 onwards</p>
-  <p>Document Scanning: ₹10 per page</p>
-  <p>Bill Payment Assistance: Charges vary</p>
-  <p>Final charges may vary depending on the service.</p>
-</div>
+        <!-- KRUPASINDHU DIGITAL SERVICE PRICE LIST -->
+<section class="services-section" id="services">
+  <h2>🛍️ Krupasindhu Digital Service</h2>
+  <p class="services-subtitle">Select a service and calculate your price</p>
+
+  <div class="service-grid">
+
+    <!-- Photocopy -->
+    <div class="service-card">
+      <div class="service-icon">📄</div>
+      <h3>Photocopy</h3>
+      <p>₹2 per page</p>
+      <label for="copyQty">Number of pages</label>
+      <input type="number" id="copyQty" min="1" value="1"
+             oninput="updateTotal('copyQty','copyTotal',2)">
+      <p class="total">Total: ₹<span id="copyTotal">2</span></p>
+      <button onclick="payNow('Photocopy', 'copyTotal')">
+        PAY NOW
+      </button>
+    </div>
+
+    <!-- Black and White Printing -->
+    <div class="service-card">
+      <div class="service-icon">🖨️</div>
+      <h3>Black &amp; White Printing</h3>
+      <p>₹3 per page</p>
+      <label for="bwQty">Number of pages</label>
+      <input type="number" id="bwQty" min="1" value="1"
+             oninput="updateTotal('bwQty','bwTotal',3)">
+      <p class="total">Total: ₹<span id="bwTotal">3</span></p>
+      <button onclick="payNow('Black and White Printing', 'bwTotal')">
+        PAY NOW
+      </button>
+    </div>
+
+    <!-- Colour Printing -->
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Colour Printing</h3>
+      <p>₹10 per page</p>
+      <label for="colourQty">Number of pages</label>
+      <input type="number" id="colourQty" min="1" value="1"
+             oninput="updateTotal('colourQty','colourTotal',10)">
+      <p class="total">Total: ₹<span id="colourTotal">10</span></p>
+      <button onclick="payNow('Colour Printing', 'colourTotal')">
+        PAY NOW
+      </button>
+    </div>
+
+    <!-- Passport Photo -->
+    <div class="service-card">
+      <div class="service-icon">📸</div>
+      <h3>Passport-size Photo</h3>
+      <p>₹50 per set</p>
+      <label for="photoQty">Number of sets</label>
+      <input type="number" id="photoQty" min="1" value="1"
+             oninput="updateTotal('photoQty','photoTotal',50)">
+      <p class="total">Total: ₹<span id="photoTotal">50</span></p>
+      <button onclick="payNow('Passport-size Photo', 'photoTotal')">
+        PAY NOW
+      </button>
+    </div>
+
+    <!-- Document Scanning -->
+    <div class="service-card">
+      <div class="service-icon">📑</div>
+      <h3>Document Scanning</h3>
+      <p>₹10 per page</p>
+      <label for="scanQty">Number of pages</label>
+      <input type="number" id="scanQty" min="1" value="1"
+             oninput="updateTotal('scanQty','scanTotal',10)">
+      <p class="total">Total: ₹<span id="scanTotal">10</span></p>
+      <button onclick="payNow('Document Scanning', 'scanTotal')">
+        PAY NOW
+      </button>
+    </div>
+
+    <!-- Online Form Filling -->
+    <div class="service-card">
+      <div class="service-icon">📝</div>
+      <h3>Online Form Filling</h3>
+      <p>₹50 onwards</p>
+      <button onclick="contactForService('Online Form Filling')">
+        BOOK SERVICE
+      </button>
+    </div>
+
+    <!-- Resume Creation -->
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Resume Creation</h3>
+      <p>₹100 onwards</p>
+      <button onclick="contactForService('Resume Creation')">
+        BOOK SERVICE
+      </button>
+    </div>
+
+    <!-- Bill Payment -->
+    <div class="service-card">
+      <div class="service-icon">💳</div>
+      <h3>Bill Payment Assistance</h3>
+      <p>Charges vary by bill</p>
+      <button onclick="contactForService('Bill Payment Assistance')">
+        BOOK SERVICE
+      </button>
+    </div>
+
+  </div>
+  <p class="price-note">
+    Final charges may vary depending on the service.
+    Please confirm variable charges before payment.
+  </p>
+</section>
+
+<style>
+.services-section {
+  padding: 25px 15px;
+  background: #f4f7fb;
+  border-radius: 16px;
+  margin: 20px auto;
+  max-width: 1120px;
+  color: #182334;
+}
+.services-section h2 {
+  text-align: center;
+  color: #123b72;
+}
+.services-subtitle, .price-note {
+  text-align: center;
+  color: #5b6879;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+.service-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 14px #123b7215;
+  border: 1px solid #e1e8f0;
+}
+.service-icon {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+.service-card h3 {
+  font-size: 18px;
+}
+.service-card input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccd5e0;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.service-card button {
+  width: 100%;
+  padding: 12px;
+  background: #5f259f;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.service-card button:hover {
+  background: #421775;
+}
+.total {
+  font-weight: bold;
+  font-size: 18px;
+}
+.price-note {
+  margin-top: 20px;
+  font-size: 14px;
+}
+</style>
+
+<script>
+function updateTotal(inputId, totalId, price) {
+  const input = document.getElementById(inputId);
+  let quantity = parseInt(input.value, 10);
+
+  if (!Number.isFinite(quantity) || quantity < 1) {
+    document.getElementById(totalId).textContent = "0";
+    return;
+  }
+
+  // Prevent unreasonable quantities.
+  quantity = Math.min(quantity, 10000);
+  input.value = quantity;
+
+  document.getElementById(totalId).textContent =
+    (quantity * price).toLocaleString("en-IN");
+}
+
+function payNow(service, totalId) {
+  const amount = document.getElementById(totalId).textContent;
+  if (amount === "0") {
+    alert("Please enter a valid quantity.");
+    return;
+  }
+
+  alert(
+    "Service: " + service +
+    "\nAmount: ₹" + amount +
+    "\n\nPhonePe payment setup is the next step. " +
+    "Please do not consider this a completed payment."
+  );
+}
+
+function contactForService(service) {
+  alert(
+    service +
+    "\nPlease contact Krupasindhu Digital Service to confirm the final price."
+  );
+}
+</script>
         <div class="notice">
           <strong data-lang="en">Please note:</strong><strong data-lang="or">ଦୟାକରି ଧ୍ୟାନ ଦିଅନ୍ତୁ:</strong>
           <span data-lang="en">Service availability and charges may vary. Government or financial services are provided only where authorized. Never share OTPs, PINs or passwords.</span>
