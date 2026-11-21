@@ -428,7 +428,19 @@ function contactForService(service) {
       </div>
     </section>
   </main>
+<section id="document-upload">
+  <h2>Upload Your Document</h2>
+  <p>PDF, JPG, PNG (Maximum 10 MB per file)</p>
 
+  <input
+    type="file"
+    id="documentFiles"
+    accept=".pdf,.jpg,.jpeg,.png"
+    multiple
+  >
+
+  <p id="uploadMessage"></p>
+</section>
   <footer>
     <div class="footer-inner">
       <p><strong>Krupa Digital Service</strong><br><span data-lang="en">Your digital service partner.</span><span data-lang="or">ଆପଣଙ୍କ ଡିଜିଟାଲ୍ ସେବା ସାଥୀ।</span></p>
@@ -447,6 +459,28 @@ function contactForService(service) {
       btn.textContent = odia ? 'English' : 'ଓଡ଼ିଆ';
     });
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  </script>const documentInput = document.getElementById("documentFiles");
+const uploadMessage = document.getElementById("uploadMessage");
+
+documentInput.addEventListener("change", function () {
+  const files = this.files;
+
+  if (files.length > 5) {
+    uploadMessage.textContent = "Maximum 5 files allowed.";
+    this.value = "";
+    return;
+  }
+
+  for (const file of files) {
+    if (file.size > 10 * 1024 * 1024) {
+      uploadMessage.textContent = "Each file must be under 10 MB.";
+      this.value = "";
+      return;
+    }
+  }
+
+  uploadMessage.textContent =
+    files.length + " file(s) selected successfully.";
+});
 </body>
 </html>
