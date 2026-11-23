@@ -435,10 +435,7 @@ function contactForService(service) {
   <input
     type="file"
     id="documentFiles"
-    accept=".pdf,.jpg,.jpeg,.png"
-    multiple
-  >
-
+    accept=".pdf,.jpg,.jpeg,.png">
   <p id="uploadMessage"></p>
 </section>
   <footer>
@@ -473,27 +470,22 @@ const uploadMessage =
 
 documentInput.addEventListener("change", function () {
 
-  const files = this.files;
+  const file = this.files[0];
 
-  if (files.length > 5) {
+  if (!file) {
+    uploadMessage.textContent = "";
+    return;
+  }
+
+  if (file.size > 10 * 1024 * 1024) {
     uploadMessage.textContent =
-      "Maximum 5 files allowed.";
+      "File size must be under 10 MB.";
     this.value = "";
     return;
   }
 
-  for (const file of files) {
-
-    if (file.size > 10 * 1024 * 1024) {
-      uploadMessage.textContent =
-        "Each file must be under 10 MB.";
-      this.value = "";
-      return;
-    }
-  }
-
   uploadMessage.textContent =
-    files.length + " file(s) selected successfully.";
+    file.name + " selected successfully.";
 
 });
 </script>
