@@ -452,28 +452,41 @@ function contactForService(service) {
     </div>
   </footer>
   <script>
-    const btn = document.getElementById('langBtn');
-    btn.addEventListener('click', () => {
-      const odia = document.body.classList.toggle('odia');
-      document.documentElement.lang = odia ? 'or' : 'en';
-      btn.textContent = odia ? 'English' : 'ଓଡ଼ିଆ';
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>const documentInput = document.getElementById("documentFiles");
-const uploadMessage = document.getElementById("uploadMessage");
+const btn = document.getElementById('langBtn');
+
+btn.addEventListener('click', () => {
+  const odia = document.body.classList.toggle('odia');
+  document.documentElement.lang = odia ? 'or' : 'en';
+  btn.textContent = odia ? 'English' : 'ଓଡ଼ିଆ';
+});
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
+// Document Upload Validation
+
+const documentInput =
+  document.getElementById("documentFiles");
+
+const uploadMessage =
+  document.getElementById("uploadMessage");
 
 documentInput.addEventListener("change", function () {
+
   const files = this.files;
 
   if (files.length > 5) {
-    uploadMessage.textContent = "Maximum 5 files allowed.";
+    uploadMessage.textContent =
+      "Maximum 5 files allowed.";
     this.value = "";
     return;
   }
 
   for (const file of files) {
+
     if (file.size > 10 * 1024 * 1024) {
-      uploadMessage.textContent = "Each file must be under 10 MB.";
+      uploadMessage.textContent =
+        "Each file must be under 10 MB.";
       this.value = "";
       return;
     }
@@ -481,6 +494,9 @@ documentInput.addEventListener("change", function () {
 
   uploadMessage.textContent =
     files.length + " file(s) selected successfully.";
+
 });
+</script>
+
 </body>
 </html>
